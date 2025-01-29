@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="welcome_message">مرحبا بكم في شِفاء</string>
+    <string name="mood_tracker">صحتي</string>
+    <string name="therapists">معالجون</string>
+    <string name="meditation">تأمل</string>
+    <string name="emergency">طوارئ</string>
+    <string name="profile">ملف شخصي</string>
+    <string name="settings">إعدادات</string>
+    <string name="language">اللغة</string>
+    <string name="how_are_you_feeling">كيف حالك اليوم؟</string>
+    <string name="save">حفظ</string>
+    <string name="cancel">إلغاء</string>
+    <string name="next">التالي</string>
+    <string name="back">رجوع</string>
+    <string name="change_language">العربية</string>
+    <string name="b1">B1</string>
+    <string name="b2">B2</string>
+    <string name="b3">B3</string>
+    <string name="b4">B4</string>
+    <string name="Home">الرئيسية</string>
+    <string name="Online">متصل</string>
+    <string name="Nearby">قريب</string>
+    <string name="Various">متنوع</string>
+    <string name="language_selector">اللغة الحالية: %1$s</string>
+    <string name="search_placeholder">ابحث عن شيء ما</string>
+    <string name="search_icon_description">بحث</string>
+    <string name="send">إرسال</string>
+    <string name="healing_title">شفاء</string>
+    <string name="healing_message">مرحبا بكم في شاشة الشفاء!</string>
+    <string name="proximity_title">قرب</string>
+    <string name="proximity_message">مرحبا بكم في شاشة القرب!</string>
+    <string name="forum_title">منتدى</string>
+    <string name="forum_message">مرحبا بكم في شاشة المنتدى!</string>
+    <string name="back_icon_description">رجوع</string>
+    <string name="search_results">نتائج البحث</string>
+    <string name="english">الإنجليزية</string>
+    <string name="french">الفرنسية</string>
+    <string name="arabic">العربية</string>
+    <string name="search_results_for">نتائج البحث عن: %1$s</string>
+    <string name="search_query">استعلام البحث</string>
+    <string name="results_for">Results for \"%1$s\":</string>
+    <string name="no_results_found">No results found</string>
+    <string name="language_selection">اختر اللغة</string>
+    <string name="language_english">الإنجليزية</string>
+    <string name="language_french">الفرنسية</string>
+    <string name="language_arabic">العربية</string>
+    <string name="type_healing">العلاج</string>
+    <string name="type_forum">المنتدى</string>
+    <string name="type_proximity">القرب</string>
+    <!-- Search result types -->
+    <string name="result_healing_title">العلاج:</string>
+    <string name="result_forum_title">موضوع المنتدى:</string>
+    <string name="result_proximity_title">بالقرب منك:</string>
+
+    <string name="result_healing_description">خدمات العلاج متاحة للاستشارة</string>
+    <string name="result_forum_description">مناقشة في مجتمعنا</string>
+    <string name="result_proximity_description">الخدمة متوفرة في منطقتك</string>
+</resources>
+    <!-- Path res/values-ar/strings.xml-->
