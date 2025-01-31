@@ -48,9 +48,10 @@
     <string name="type_healing">Soins</string>
     <string name="type_forum">Forum</string>
     <string name="type_proximity">A Proximité</string>
-
-    <!-- Search result types -->
+    <string name="type_message">Ecrire un message</string>
+    <string name="send_message">Envoyer message</string>
     <string name="result_healing_title">Soin :</string>
+    <string name="yesterday">Hier</string>
     <string name="result_forum_title">Sujet Forum :</string>
     <string name="result_proximity_title">À proximité :</string>
     <string name="result_healing_description">Services de soin disponibles pour consultation</string>

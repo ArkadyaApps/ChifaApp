@@ -49,10 +49,12 @@
     <string name="type_forum">المنتدى</string>
     <string name="type_proximity">القرب</string>
     <!-- Search result types -->
+    <string name="yesterday">Yesterday</string>
     <string name="result_healing_title">العلاج:</string>
     <string name="result_forum_title">موضوع المنتدى:</string>
     <string name="result_proximity_title">بالقرب منك:</string>
-
+    <string name="type_message">Ecrire un message</string>
+    <string name="send_message">Envoyer</string>
     <string name="result_healing_description">خدمات العلاج متاحة للاستشارة</string>
     <string name="result_forum_description">مناقشة في مجتمعنا</string>
     <string name="result_proximity_description">الخدمة متوفرة في منطقتك</string>

@@ -25,7 +25,6 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-        resConfigs("en", "fr", "ar")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -42,6 +41,10 @@ android {
     buildFeatures {
         compose = true
 
+    }
+    androidResources {
+        noCompress.add("tflite")
+        localeFilters.addAll(listOf("en", "fr", "ar"))
     }
 
     compileOptions {

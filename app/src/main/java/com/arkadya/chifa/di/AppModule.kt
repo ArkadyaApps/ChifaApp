@@ -7,25 +7,26 @@ import com.arkadya.chifa.forum.database.MessageDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DatabaseModule {
+object AppModule {
 
     @Provides
     @Singleton
-    fun provideAppDatabase(@dagger.hilt.android.qualifiers.ApplicationContext context: Context): AppDatabase {
+    fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(
             context,
             AppDatabase::class.java,
-            "chifa_database"
+            AppDatabase.DATABASE_NAME
         ).build()
     }
 
     @Provides
-    fun provideDao(appDatabase: AppDatabase): MessageDao { // Replace `YourDao` with your DAO interface
-        return appDatabase.myDao()
+    fun provideMessageDao(database: AppDatabase): MessageDao {
+        return database.messageDao()
     }
 }

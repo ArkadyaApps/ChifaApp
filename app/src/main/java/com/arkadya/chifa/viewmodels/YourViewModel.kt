@@ -58,26 +58,26 @@ class YourViewModel @Inject constructor(
 
     fun onButton2Click() {
         viewModelScope.launch {
-            _navigationEvent.emit(NavRoute.Proximity.route)
+            _navigationEvent.emit(NavRoute.PROXIMITY)
         }
     }
 
     fun onButton3Click() {
         viewModelScope.launch {
-            _navigationEvent.emit(NavRoute.Healing.route)
+            _navigationEvent.emit(NavRoute.HEALING)
         }
     }
 
     fun onButton4Click() {
         viewModelScope.launch {
-            _navigationEvent.emit(NavRoute.Forum.route)
+            _navigationEvent.emit(NavRoute.FORUM)
         }
     }
 
     fun onSearchSubmit(query: String) {
         Log.d("YourViewModel", "Search submitted: $query")
         viewModelScope.launch {
-            _navigationEvent.emit(NavRoute.SearchResults.createRoute(query))
+            _navigationEvent.emit(NavRoute.createSearchResultsRoute(query))
         }
         performSearch(query)
     }
@@ -85,9 +85,11 @@ class YourViewModel @Inject constructor(
     fun onResultClick(result: SearchResult) {
         viewModelScope.launch {
             when (result.type) {
-                "healing" -> _navigationEvent.emit(NavRoute.Healing.route)
-                "proximity" -> _navigationEvent.emit(NavRoute.Proximity.route)
-                "forum" -> _navigationEvent.emit(NavRoute.Forum.route)
+                "healing" -> _navigationEvent.emit(NavRoute.HEALING)
+                "proximity" -> _navigationEvent.emit(NavRoute.PROXIMITY)
+                "forum" -> _navigationEvent.emit(NavRoute.FORUM)
+                // Add navigation to chat room if applicable
+                "chat_room" -> _navigationEvent.emit(NavRoute.createChatRoomRoute(result.query)) // Assuming result.query holds the room name
             }
         }
     }

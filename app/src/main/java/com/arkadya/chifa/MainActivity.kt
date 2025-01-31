@@ -20,8 +20,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.arkadya.chifa.forum.ui.screens.ForumScreen
+import com.arkadya.chifa.forum.ui.screens.ChatRoomsScreen
+import com.arkadya.chifa.forum.ui.screens.ChatRoomScreen
 import com.arkadya.chifa.navigation.NavRoute
-import com.arkadya.chifa.ui.screens.*
+import com.arkadya.chifa.ui.screens.HealingScreen
+import com.arkadya.chifa.ui.screens.MainScreen
+import com.arkadya.chifa.ui.screens.ProximityScreen
+import com.arkadya.chifa.ui.screens.ResultScreen
 import com.arkadya.chifa.ui.theme.ChifaTheme
 import com.arkadya.chifa.utils.LanguageUtils
 import com.arkadya.chifa.viewmodels.YourViewModel
@@ -60,9 +66,9 @@ class MainActivity : ComponentActivity() {
                     ) {
                         NavHost(
                             navController = navController,
-                            startDestination = NavRoute.Main.route
+                            startDestination = NavRoute.MAIN
                         ) {
-                            composable(NavRoute.Main.route) {
+                            composable(NavRoute.MAIN) {
                                 MainScreen(
                                     onButton1Click = { /* your navigation */ },
                                     onButton2Click = { viewModel.onButton2Click() },
@@ -73,17 +79,21 @@ class MainActivity : ComponentActivity() {
                                     onLanguageChange = viewModel::updateLanguage
                                 )
                             }
-                            composable(NavRoute.Proximity.route) {
+                            composable(NavRoute.PROXIMITY) {
                                 ProximityScreen(navController = navController)
                             }
-                            composable(NavRoute.Healing.route) {
+                            composable(NavRoute.HEALING) {
                                 HealingScreen(navController = navController)
                             }
-                            composable(NavRoute.Forum.route) {
-                                ForumScreen(navController = navController)
+                            composable(NavRoute.FORUM) { backStackEntry ->
+                                val roomName = backStackEntry.arguments?.getString("roomName") ?: "Default Room Name"
+                                ForumScreen(navController = navController, roomName = roomName)
+                            }
+                            composable(NavRoute.CHAT_ROOMS) {
+                                ChatRoomsScreen(navController = navController)
                             }
                             composable(
-                                route = NavRoute.SearchResults.route,
+                                route = NavRoute.SEARCH_RESULTS,
                                 arguments = listOf(
                                     navArgument("query") { type = NavType.StringType }
                                 )
@@ -97,6 +107,10 @@ class MainActivity : ComponentActivity() {
                                     onResultClick = viewModel::onResultClick,
                                     currentLanguage = uiState.currentLanguage
                                 )
+                            }
+                            composable(NavRoute.CHAT_ROOM) { backStackEntry ->
+                                val roomName = backStackEntry.arguments?.getString("roomName") ?: "Default Room"
+                                ChatRoomScreen(roomName = roomName, navController = navController)
                             }
                         }
                     }

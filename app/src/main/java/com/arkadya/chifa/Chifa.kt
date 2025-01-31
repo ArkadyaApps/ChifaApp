@@ -16,6 +16,6 @@ class ChifaApplication : Application() {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         val currentLanguage = LanguageUtils.getCurrentLanguage(this)
-        LanguageUtils.createContextWithNewLocale(this, currentLanguage)
+        LanguageUtils.setLocale(this, currentLanguage)
     }
 }
